@@ -27,8 +27,8 @@ class Permission(models.Model):
     url = models.CharField(max_length=32, verbose_name='权限')
     # is_menu = models.BooleanField(default=False, verbose_name='是否菜单')
     # icon = models.CharField(max_length=32, verbose_name='图标', null=True, blank=True)
-    menu = models.ForeignKey('Menu',null=True,blank=True,on_delete=models.CASCADE)
-    parent = models.ForeignKey('self',blank=True,null=True,on_delete=models.CASCADE)
+    menu = models.ForeignKey('Menu',null=True,blank=True,on_delete=models.SET_NULL,verbose_name='菜单')
+    parent = models.ForeignKey('self',blank=True,null=True,on_delete=models.SET_NULL,verbose_name='上级菜单')
     name = models.CharField(max_length=32, blank=True,null=True,verbose_name='按钮权限',unique=True)
     class Meta:
         verbose_name_plural = "权限表"

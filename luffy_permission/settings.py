@@ -125,6 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+AUTO_DISCOVER_EXCLUDE = [
+    '/admin/',
+    '/login/',
+]
+
 # #######################权限相关的配置########
 PERMISSION_SESSION_KEY = 'permissions'
 MENU_SESSION_KEY = 'menus'
@@ -136,3 +141,4 @@ WHILE_URL_LIST = [
     r'^/resetpassword/$',
     r'^/admin/.*',
 ]
+

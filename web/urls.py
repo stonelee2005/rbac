@@ -17,5 +17,5 @@ urlpatterns = [
     re_path(r'^payment/edit/(?P<pid>\d+)/$', payment.payment_edit,name='payment_edit'),
     re_path(r'^payment/del/(?P<pid>\d+)/$', payment.payment_del,name='payment_del'),
 
-    re_path(r'^login/$', account.login),
+    re_path(r'^login/$', account.login,name='login'),
 ]
